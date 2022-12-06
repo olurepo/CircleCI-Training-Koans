@@ -4,7 +4,13 @@ jobs:
   build:
     docker:
       - image: cimg/base:2022.10
+      - image: cimg/postgres:14.0
+        environment:
+          POSTGRES_USER: postgres
     steps:
+      - checkout
+      - run: sudo apt-get update
+      - run: sudo apt-get install postgresql-client
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
       - run:
