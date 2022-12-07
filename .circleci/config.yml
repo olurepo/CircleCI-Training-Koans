@@ -24,7 +24,6 @@ jobs:
       - run:
           name: Wait for db # If no database is found in 1 minute the job will fail.
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run: go mod init && go test
   
 
 workflows:
