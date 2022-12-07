@@ -27,6 +27,6 @@ jobs:
   
 
 workflows:
-  build_dockerDB:
+  build_in_parallel:
     jobs:
       - build
